@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MESA — Portfolio</title>
+  <meta name="description" content="Portfolio MESA — w formie książki (flipbook)." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brandlink" href="index.html">
+      <div class="brand">
+        <div class="logo">MESA</div>
+        <div class="tag">Architektura × Wydruk 3D</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Strona główna</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <div class="section-head">
+      <h2>Portfolio</h2>
+      <p class="muted">Wersja „książkowa” — przewracaj strony przyciskami lub klawiszami ← / →.</p>
+    </div>
+
+    <div class="book-wrap">
+      <div class="book-toolbar">
+        <div class="controls">
+          <button id="prevBtn" class="book-btn" type="button">← Poprzednia</button>
+          <button id="nextBtn" class="book-btn" type="button">Następna →</button>
+          <button id="firstBtn" class="book-btn" type="button">⟲ Start</button>
+        </div>
+        <div class="progress">
+          <span id="counter">1 / 12</span>
+          <div class="bar"><div id="barFill"></div></div>
+          <span class="hint">Tip: kliknij w książkę, potem użyj strzałek</span>
+        </div>
+      </div>
+
+      <div class="book-stage">
+        <div id="book" class="book" tabindex="0" aria-label="Flipbook portfolio"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="muted">© <span id="y"></span> MESA. Hostowane na GitHub Pages.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  const pages = [
+  "assets/pages/page-05.webp",
+  "assets/pages/page-06.webp",
+  "assets/pages/page-07.webp",
+  "assets/pages/page-08.webp",
+  "assets/pages/page-09.webp",
+  "assets/pages/page-10.webp",
+  "assets/pages/page-11.webp",
+  "assets/pages/page-12.webp",
+  "assets/pages/page-13.webp",
+  "assets/pages/page-14.webp",
+  "assets/pages/page-15.webp",
+  "assets/pages/page-16.webp"
+];
+  const book = document.getElementById('book');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const firstBtn = document.getElementById('firstBtn');
+  const counter = document.getElementById('counter');
+  const barFill = document.getElementById('barFill');
+
+  const total = pages.length;
+  const sheets = [];
+
+  function makeImg(src, alt){
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.loading = 'lazy';
+    return img;
+  }
+
+  for (let i = 0; i < total; i++) {
+    const page = document.createElement('div');
+    page.className = 'page';
+    page.dataset.index = String(i);
+
+    const front = document.createElement('div');
+    front.className = 'frontface';
+    front.appendChild(makeImg(pages[i], `Strona ${i+1}`));
+
+    const back = document.createElement('div');
+    back.className = 'backface';
+    const backSrc = (i+1 < total) ? pages[i+1] : pages[i];
+    back.appendChild(makeImg(backSrc, `Strona ${Math.min(i+2,total)}`));
+
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.textContent = `${i+1} / ${total}`;
+
+    page.appendChild(front);
+    page.appendChild(back);
+    page.appendChild(label);
+
+    page.style.zIndex = String(100 - i);
+    book.appendChild(page);
+    sheets.push(page);
+  }
+
+  let current = 0;
+
+  function updateUI(){
+    sheets.forEach((p, i) => {
+      p.classList.toggle('is-flipped', i < current);
+      p.classList.toggle('is-active', i === current);
+      p.classList.toggle('is-behind', i === current + 1);
+      p.style.pointerEvents = (i === current) ? 'auto' : 'none';
+    });
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    counter.textContent = `${current+1} / ${total}`;
+    barFill.style.width = `${(current/(total-1))*100}%`;
+  }
+
+  function goNext(){ if (current < total - 1){ current += 1; updateUI(); } }
+  function goPrev(){ if (current > 0){ current -= 1; updateUI(); } }
+  function goFirst(){ current = 0; updateUI(); }
+
+  nextBtn.addEventListener('click', goNext);
+  prevBtn.addEventListener('click', goPrev);
+  firstBtn.addEventListener('click', goFirst);
+
+  book.addEventListener('click', (e) => {
+    const rect = book.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    if (x > rect.width * 0.55) goNext();
+    else goPrev();
+  });
+
+  book.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+    if (e.key === 'Home') { e.preventDefault(); goFirst(); }
+  });
+
+  let touchStartX = null;
+  book.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, {passive:true});
+  book.addEventListener('touchend', (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) goNext();
+      else goPrev();
+    }
+    touchStartX = null;
+  }, {passive:true});
+
+  setTimeout(() => book.focus(), 200);
+  updateUI();
+</script>
+</body>
+</html>
