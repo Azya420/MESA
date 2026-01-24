@@ -25,7 +25,7 @@ body{
 }
 .topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px}
 .brand{display:flex; flex-direction:column; gap:6px}
-.logo-img{width:120px; height:auto}
+.logo-img{width:auto; height:36px; display:block}
 .tag{font-size:12px; color:var(--muted)}
 .nav{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
 .nav a{
