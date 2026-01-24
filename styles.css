@@ -256,6 +256,7 @@ body{
 .page-home .nav a{font-size:14px;font-weight:600}
 .page-home .nav a[aria-current="page"]{background:transparent}
 .page-home .footer{display:none}
+.page-home .hero-grid{grid-template-columns:1fr}
 .page-home .home-frame{
   max-width:980px;
   margin:14px auto 30px;
