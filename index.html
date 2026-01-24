@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MESA — Strona główna</title>
+  <meta name="description" content="Architektura × Wydruk 3D — portfolio makiet, modeli i topografii." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brandlink" href="index.html">
+      <div class="brand">
+        <div class="logo">MESA</div>
+        <div class="tag">Architektura × Wydruk 3D</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Strona główna</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>MESA</h1>
+      <p class="lead">Architektura × Wydruk 3D</p>
+      <p class="muted">Portfolio online przygotowane pod GitHub Pages. Zobacz realizacje, poznaj technologię i skontaktuj się w 2 kliknięcia.</p>
+      <div class="hero-cta">
+        <a class="btn" href="portfolio.html">Zobacz portfolio</a>
+        <a class="btn ghost" href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="quicklinks">
+        <a class="pill" href="o-nas.html">O nas</a>
+        <a class="pill" href="o-nas.html#technologia">Technologia i materiały</a>
+        <a class="pill" href="portfolio.html#windberg">WindBerg</a>
+        <a class="pill" href="portfolio.html#morskie-echo">Morskie Echo</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="assets/pages/page-01.webp" alt="Okładka portfolio — MESA" loading="eager" />
+    </figure>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Wybrane plansze</h2>
+      <p class="muted">Skrót — pełna lista jest w zakładce Portfolio.</p>
+    </div>
+    <div class="grid-cards">
+      <a class="imgcard" href="portfolio.html#windberg">
+        <img src="assets/pages/page-05.webp" alt="WindBerg" loading="lazy" />
+        <div class="imgcap"><strong>WindBerg</strong><span class="muted">Tiny House 2024</span></div>
+      </a>
+      <a class="imgcard" href="portfolio.html#morskie-echo">
+        <img src="assets/pages/page-07.webp" alt="Morskie Echo" loading="lazy" />
+        <div class="imgcap"><strong>Morskie Echo</strong><span class="muted">Dyplom 2025</span></div>
+      </a>
+      <a class="imgcard" href="portfolio.html#makieta">
+        <img src="assets/pages/page-09.webp" alt="Makieta" loading="lazy" />
+        <div class="imgcap"><strong>Makieta</strong><span class="muted">1:250</span></div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="muted">© <span id="y"></span> MESA. Hostowane na GitHub Pages.</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
