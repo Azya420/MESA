@@ -21,41 +21,31 @@
     <nav class="nav">
       <a href="index.html">Strona główna</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="o-nas.html">O nas</a>
+      <a href="o-nas.html" aria-current="page">O nas</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<main class="wrap">
-  <section class="section">
-    <div class="section-head">
-      <h2>O nas</h2>
-      <p class="muted">Działamy na styku architektury i druku 3D.</p>
-    </div>
-    <figure class="page">
-      <img src="assets/pages/page-02.webp" alt="O nas — plansza 2" loading="lazy" />
-    </figure>
+<main class="wrap section-stack">
+  <nav class="subnav" aria-label="Podstrony O nas">
+    <a href="o-nas.html" aria-current="page">O nas</a>
+    <a href="o-nas.html#technologia">Technologia i materiały</a>
+    <a href="o-nas.html#realizacja">Realizacja</a>
+  </nav>
+
+  <section class="panel center">
+    <h1 class="panel-title">SLAJD</h1>
   </section>
 
-  <section id="technologia" class="section">
-    <div class="section-head">
-      <h2>Technologia i materiały</h2>
-      <p class="muted">FDM • MSLA • PLA • ABS • TPU • Żywica fotopolimerowa</p>
-    </div>
-    <figure class="page">
-      <img src="assets/pages/page-03.webp" alt="Technologia i materiały — plansza 3" loading="lazy" />
-    </figure>
+  <section id="technologia" class="panel">
+    <h2 class="panel-title">Technologia i materiały</h2>
+    <p class="panel-subtitle">FDM • MSLA • PLA • ABS • TPU • Żywica fotopolimerowa</p>
   </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>Realizacja</h2>
-      <p class="muted">Zakres prac: budynki, topografia, infrastruktura, mała architektura.</p>
-    </div>
-    <figure class="page">
-      <img src="assets/pages/page-04.webp" alt="Realizacja — plansza 4" loading="lazy" />
-    </figure>
+  <section id="realizacja" class="panel">
+    <h2 class="panel-title">Realizacja</h2>
+    <p class="panel-subtitle">Zakres prac: budynki, topografia, infrastruktura, mała architektura.</p>
   </section>
 </main>
 
