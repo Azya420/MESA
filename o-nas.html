@@ -9,12 +9,28 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brandlink" href="index.html">
+      <div class="brand">
+        <img class="logo-img" src="assets/logo.svg" alt="MESA logo" />
+        <div class="tag">Architektura × Wydruk 3D</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Strona główna</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="o-nas.html" aria-current="page">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
 <main class="wrap section-stack">
   <nav class="subnav" aria-label="Podstrony O nas">
-    <button class="subnav-btn active" type="button" data-slide="0">Page 2</button>
-    <button class="subnav-btn" type="button" data-slide="1">Page 3</button>
-    <button class="subnav-btn" type="button" data-slide="2">Page 4</button>
+    <button class="subnav-btn active" type="button" data-slide="0">O nas</button>
+    <button class="subnav-btn" type="button" data-slide="1">Technologia i Materiały</button>
+    <button class="subnav-btn" type="button" data-slide="2">Realizacja</button>
   </nav>
   <div class="onas-slider">
     <div class="slider-frame">
@@ -22,7 +38,13 @@
     </div>
   </div>
 </main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="muted">© <span id="y"></span> MESA. Hostowane na GitHub Pages.</p>
+  </div>
+</main>
 <script>
+  document.getElementById('y').textContent = new Date().getFullYear();
   const slides = [
     {
       title: "Page 2",
