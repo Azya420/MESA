@@ -1,22 +1,19 @@
-# Portfolio — GitHub Pages
+# Portfolio — GitHub Pages (4 podstrony)
 
-To jest statyczna strona (HTML/CSS) wygenerowana z Twojego PDF — gotowa do publikacji na **GitHub Pages**.
+Masz teraz statyczną stronę z 4 podstronami:
+- `index.html` — Strona główna
+- `portfolio.html` — Portfolio
+- `o-nas.html` — O nas (+ technologia i realizacja)
+- `kontakt.html` — Kontakt
 
-## Struktura
-- `index.html` — strona główna
-- `styles.css` — styl
-- `assets/pages/` — obrazy plansz (WEBP)
+## Publikacja
+Wrzuć CAŁĄ zawartość tego folderu do repozytorium na GitHub (plik `index.html` w root), a potem:
+**Settings → Pages → Deploy from a branch → main / (root)**
 
-## Publikacja na GitHub Pages (najprościej)
-1. Utwórz repozytorium na GitHub (np. `portfolio`).
-2. Wrzuć zawartość tego folderu do repo (plik `index.html` musi być w root).
-3. Wejdź w: **Settings → Pages**
-4. `Build and deployment`:
-   - Source: **Deploy from a branch**
-   - Branch: **main** / **root**
-5. Zapisz — po chwili dostaniesz link do strony.
+## Custom domain
+W GitHub Pages ustaw jako Custom domain: `www.mesa3d.pl` (a w GoDaddy zrób przekierowanie 301 z `mesa3d.pl` → `https://www.mesa3d.pl`).
 
-## Podmiana kontaktu
-W `index.html` znajdź sekcję `#contact` i podmień:
+## Edycja kontaktu
+Otwórz `kontakt.html` i podmień:
 - email
 - linki social
