@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
 <header class="topbar">
   <div class="wrap topbar-inner">
     <a class="brandlink" href="index.html">
@@ -30,58 +29,15 @@
 <main class="wrap section-stack">
   <nav class="subnav" aria-label="Podstrony O nas">
     <button class="subnav-btn active" type="button" data-slide="0">O nas</button>
-    <button class="subnav-btn" type="button" data-slide="1">Technologia i materiały</button>
+    <button class="subnav-btn" type="button" data-slide="1">Technologia i Materiały</button>
     <button class="subnav-btn" type="button" data-slide="2">Realizacja</button>
   </nav>
-
-  <section class="panel onas-hero">
-    <div class="onas-grid">
-      <div>
-        <h1 class="panel-title">Tworzymy makiety, które robią wrażenie</h1>
-        <p class="panel-subtitle">Łączymy druk 3D z architekturą, aby przygotować modele o wysokiej precyzji i estetyce. Pracujemy z pracowniami, inwestorami i studentami.</p>
-        <div class="keypoints">
-          <div class="keypoint">
-            <span>Doświadczenie</span>
-            <p>Makiety do prezentacji inwestycyjnych i konkursów.</p>
-          </div>
-          <div class="keypoint">
-            <span>Technologia</span>
-            <p>FDM, MSLA i szeroka paleta materiałów.</p>
-          </div>
-          <div class="keypoint">
-            <span>Proces</span>
-            <p>Od konsultacji i modelu po gotowy wydruk.</p>
-          </div>
-        </div>
-      </div>
-      <div class="onas-slider">
-        <div class="slider-frame">
-          <img id="onasSlideImg" src="assets/pages/page-05.webp" alt="Portfolio MESA" />
-          <div class="slider-meta">
-            <span id="onasSlideTitle">O nas</span>
-            <p id="onasSlideDesc">Poznaj nasz styl: minimalistyczne makiety i precyzyjne detale.</p>
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button class="slider-arrow" type="button" data-dir="prev">←</button>
-          <span id="onasSlideCount">1 / 3</span>
-          <button class="slider-arrow" type="button" data-dir="next">→</button>
-        </div>
-      </div>
+  <div class="onas-slider">
+    <div class="slider-frame">
+      <img id="onasSlideImg" src="assets/pages/page-02.webp" alt="Page 2" />
     </div>
-  </section>
-
-  <section id="technologia" class="panel">
-    <h2 class="panel-title">Technologia i materiały</h2>
-    <p class="panel-subtitle">FDM • MSLA • PLA • ABS • TPU • Żywica fotopolimerowa</p>
-  </section>
-
-  <section id="realizacja" class="panel">
-    <h2 class="panel-title">Realizacja</h2>
-    <p class="panel-subtitle">Zakres prac: budynki, topografia, infrastruktura, mała architektura.</p>
-  </section>
+  </div>
 </main>
-
 <footer class="footer">
   <div class="wrap">
     <p class="muted">© <span id="y"></span> MESA. Hostowane na GitHub Pages.</p>
@@ -89,31 +45,23 @@
 </footer>
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
-
   const slides = [
     {
-      title: "O nas",
-      desc: "Poznaj nasz styl: minimalistyczne makiety i precyzyjne detale.",
-      img: "assets/pages/page-05.webp"
+      title: "Page 2",
+      img: "assets/pages/page-02.webp"
     },
     {
-      title: "Technologia i materiały",
-      desc: "FDM, MSLA oraz materiały dostosowane do skali i funkcji modelu.",
-      img: "assets/pages/page-09.webp"
+      title: "Page 3",
+      img: "assets/pages/page-03.webp"
     },
     {
-      title: "Realizacja",
-      desc: "Od konsultacji, przez model 3D, po gotową makietę gotową do prezentacji.",
-      img: "assets/pages/page-13.webp"
+      title: "Page 4",
+      img: "assets/pages/page-04.webp"
     }
   ];
 
   const slideImg = document.getElementById('onasSlideImg');
-  const slideTitle = document.getElementById('onasSlideTitle');
-  const slideDesc = document.getElementById('onasSlideDesc');
-  const slideCount = document.getElementById('onasSlideCount');
   const navButtons = document.querySelectorAll('.subnav-btn');
-  const arrowButtons = document.querySelectorAll('.slider-arrow');
   let currentSlide = 0;
 
   function updateSlide(index){
@@ -121,9 +69,6 @@
     const data = slides[currentSlide];
     slideImg.src = data.img;
     slideImg.alt = data.title;
-    slideTitle.textContent = data.title;
-    slideDesc.textContent = data.desc;
-    slideCount.textContent = `${currentSlide + 1} / ${slides.length}`;
     navButtons.forEach((btn, idx) => {
       btn.classList.toggle('active', idx === currentSlide);
     });
@@ -132,16 +77,6 @@
   navButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       updateSlide(Number(btn.dataset.slide));
-    });
-  });
-
-  arrowButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const dir = btn.dataset.dir;
-      const next = dir === 'next'
-        ? (currentSlide + 1) % slides.length
-        : (currentSlide - 1 + slides.length) % slides.length;
-      updateSlide(next);
     });
   });
 

@@ -28,25 +28,7 @@
 
 <main class="wrap">
   <section class="section">
-    <div class="section-head">
-      <h2>Portfolio</h2>
-      <p class="muted">Przegląd realizacji w formie dwustronicowego flipbooka. Przewracaj strony przyciskami, klikając w lewą/prawą stronę lub strzałkami ← / →.</p>
-    </div>
-
     <div class="book2-wrap">
-      <div class="book2-toolbar">
-        <div class="controls">
-          <button id="bPrev" class="book2-btn" type="button">← Poprzednia</button>
-          <button id="bNext" class="book2-btn" type="button">Następna →</button>
-          <button id="bFirst" class="book2-btn" type="button">⟲ Start</button>
-        </div>
-        <div class="book2-progress">
-          <span id="bCounter">1 / 6</span>
-          <div class="bar"><div id="bBar"></div></div>
-          <span class="hint">Tip: kliknij w książkę, potem użyj strzałek</span>
-        </div>
-      </div>
-
       <div class="book2-stage">
         <div id="book2" class="book2" tabindex="0" aria-label="Portfolio flipbook (2 strony)"></div>
       </div>
@@ -74,11 +56,6 @@
   const total = spreads.length;
 
   const book = document.getElementById('book2');
-  const prevBtn = document.getElementById('bPrev');
-  const nextBtn = document.getElementById('bNext');
-  const firstBtn = document.getElementById('bFirst');
-  const counter = document.getElementById('bCounter');
-  const bar = document.getElementById('bBar');
 
   let current = 0; // spread index
   let animating = false;
@@ -96,16 +73,6 @@
     i.alt = alt;
     i.loading = 'lazy';
     return i;
-  }
-
-  function updateUI(){
-    prevBtn.disabled = (current === 0) || animating;
-    nextBtn.disabled = (current === total - 1) || animating;
-    firstBtn.disabled = (current === 0) || animating;
-
-    counter.textContent = (current + 1) + " / " + total;
-    const pct = (total === 1) ? 100 : (current / (total - 1)) * 100;
-    bar.style.width = pct + "%";
   }
 
   function renderSpread(idx){
@@ -126,7 +93,6 @@
     spread.appendChild(rightPane);
     book.appendChild(spread);
 
-    updateUI();
   }
 
   function animateTurn(direction){
@@ -136,8 +102,6 @@
 
     animating = true;
     book.classList.add("is-animating");
-    updateUI();
-
     const layer = el("div","turnlayer");
     const turnPage = el("div","turnpage " + (direction === "next" ? "right" : "left"));
     const faceFront = el("div","face front");
@@ -182,16 +146,6 @@
 
   function goNext(){ animateTurn("next"); }
   function goPrev(){ animateTurn("prev"); }
-  function goFirst(){
-    if (animating) return;
-    current = 0;
-    renderSpread(current);
-    setTimeout(function(){ book.focus(); }, 50);
-  }
-
-  nextBtn.addEventListener("click", goNext);
-  prevBtn.addEventListener("click", goPrev);
-  firstBtn.addEventListener("click", goFirst);
 
   // Click zones: right half next, left half prev
   book.addEventListener("click", function(e){
@@ -204,7 +158,6 @@
   book.addEventListener("keydown", function(e){
     if (e.key === "ArrowRight") { e.preventDefault(); goNext(); }
     if (e.key === "ArrowLeft") { e.preventDefault(); goPrev(); }
-    if (e.key === "Home") { e.preventDefault(); goFirst(); }
   });
 
   // Touch swipe
