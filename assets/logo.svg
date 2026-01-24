@@ -1,5 +1,5 @@
-<svg width="540" height="180" viewBox="0 -24 540 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
-  <rect y="-24" width="540" height="180" fill="black"/>
+<svg width="540" height="220" viewBox="0 -40 540 220" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
+  <rect y="-40" width="540" height="220" fill="black"/>
   <g stroke="#F6F2EA" stroke-width="8" stroke-linecap="square">
     <path d="M20 100V20L90 100V20"/>
     <path d="M150 20H250"/>
