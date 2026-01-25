@@ -262,6 +262,7 @@ body{
   gap:22px;
   align-items:stretch;
 }
+.contact-grid .panel + .panel{margin-top:0}
 .contact-panel{
   min-height:160px;
   padding:22px 26px 26px;
