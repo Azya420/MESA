@@ -278,6 +278,7 @@ body{
 .contact-block{display:flex;flex-direction:column;gap:6px;margin-top:14px}
 .contact-block span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .contact-block a{color:var(--text);text-decoration:none;font-weight:600}
+.contact-highlight .contact-block:first-of-type{margin-top:8px}
 @media (max-width: 900px){
   .audience{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
