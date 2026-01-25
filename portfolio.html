@@ -43,8 +43,16 @@
 </main>
 
 <script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  function scrollToTop(){
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }
+  window.addEventListener('DOMContentLoaded', scrollToTop);
   window.addEventListener('load', function(){
-    window.scrollTo(0, 0);
+    scrollToTop();
+    setTimeout(scrollToTop, 100);
   });
   const spreads = [
   ["assets/pages/page-05.webp", "assets/pages/page-06.webp"],
