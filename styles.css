@@ -264,8 +264,13 @@ body{
 }
 .contact-panel{
   min-height:160px;
-  padding:26px;
+  padding:22px 26px 26px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
+.contact-panel h2{margin-top:0}
 .contact-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
 .contact-note{margin-top:14px;color:var(--muted);font-size:13px}
 .contact-highlight{background:linear-gradient(150deg, rgba(255,255,255,.08), rgba(0,0,0,.35)), var(--panel-soft)}
