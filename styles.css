@@ -171,9 +171,10 @@ body{
   width:100%;
 }
 .hero-cta-gallery img{
+  display:block;
   width:100%;
   height:auto;
-  aspect-ratio:3 / 4;
+  aspect-ratio:auto;
   object-fit:contain;
   border-radius:12px;
   border:1px solid var(--line);
