@@ -30,7 +30,13 @@
   <section class="section">
     <div class="book2-wrap">
       <div class="book2-stage">
+        <button class="book2-arrow book2-arrow-prev" type="button" aria-label="Poprzednia strona">
+          <span aria-hidden="true">&#10094;</span>
+        </button>
         <div id="book2" class="book2" tabindex="0" aria-label="Portfolio flipbook (2 strony)"></div>
+        <button class="book2-arrow book2-arrow-next" type="button" aria-label="Następna strona">
+          <span aria-hidden="true">&#10095;</span>
+        </button>
       </div>
     </div>
   </div>
@@ -48,6 +54,8 @@
   const total = spreads.length;
 
   const book = document.getElementById('book2');
+  const prevBtn = document.querySelector('.book2-arrow-prev');
+  const nextBtn = document.querySelector('.book2-arrow-next');
 
   let current = 0; // spread index
   let animating = false;
@@ -84,7 +92,13 @@
     spread.appendChild(leftPane);
     spread.appendChild(rightPane);
     book.appendChild(spread);
+    updateButtons();
 
+  }
+
+  function updateButtons(){
+    if (prevBtn) prevBtn.disabled = current <= 0;
+    if (nextBtn) nextBtn.disabled = current >= total - 1;
   }
 
   function animateTurn(direction){
@@ -138,6 +152,9 @@
 
   function goNext(){ animateTurn("next"); }
   function goPrev(){ animateTurn("prev"); }
+
+  if (prevBtn) prevBtn.addEventListener("click", goPrev);
+  if (nextBtn) nextBtn.addEventListener("click", goNext);
 
   // Click zones: right half next, left half prev
   book.addEventListener("click", function(e){
