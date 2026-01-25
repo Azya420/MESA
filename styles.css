@@ -178,8 +178,8 @@ body{
   border-radius:12px;
   border:1px solid var(--line);
   box-shadow:var(--shadow);
-  background:#0b0c10;
-  padding:6px;
+  background:transparent;
+  padding:0;
 }
 .hero-stats{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:12px;margin-top:18px}
 .stat{background:rgba(255,255,255,.05);border:1px solid var(--line);padding:12px;border-radius:12px}
