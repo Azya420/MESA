@@ -132,6 +132,16 @@ body{
   letter-spacing:.04em;
 }
 .panel-subtitle{margin:0 0 18px;font-size:16px;color:var(--muted)}
+.contact-intro{
+  padding:12px 4px 4px;
+  text-align:center;
+}
+.contact-intro .panel-title{
+  margin-bottom:8px;
+}
+.contact-intro .panel-subtitle{
+  margin-bottom:0;
+}
 .hero-panel{padding:34px}
 .hero-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:30px;align-items:start}
 .hero-copy h1{margin:0 0 14px;font-size:36px;letter-spacing:.03em}
@@ -248,14 +258,19 @@ body{
 .slider-arrow:hover{background:rgba(255,255,255,.14)}
 .contact-grid{
   display:grid;
-  grid-template-columns:1fr 1.4fr;
+  grid-template-columns:1.65fr 0.75fr;
   gap:22px;
-  align-items:start;
+  align-items:stretch;
 }
 .contact-panel{
   min-height:160px;
-  padding:26px;
+  padding:22px 26px 26px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
+.contact-panel h2{margin-top:0}
 .contact-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
 .contact-note{margin-top:14px;color:var(--muted);font-size:13px}
 .contact-highlight{background:linear-gradient(150deg, rgba(255,255,255,.08), rgba(0,0,0,.35)), var(--panel-soft)}
