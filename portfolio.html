@@ -71,6 +71,17 @@
   let current = 0; // spread index
   let animating = false;
 
+  function focusBook(){
+    if (!book) return;
+    if (book.focus) {
+      try {
+        book.focus({ preventScroll: true });
+      } catch (error) {
+        book.focus();
+      }
+    }
+  }
+
   function el(tag, cls){
     const n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -157,7 +168,7 @@
       animating = false;
       book.classList.remove("is-animating");
       renderSpread(current);
-      setTimeout(function(){ book.focus(); }, 50);
+      setTimeout(focusBook, 50);
     }, { once: true });
   }
 
@@ -194,7 +205,7 @@
   }, {passive:true});
 
   renderSpread(current);
-  setTimeout(function(){ book.focus(); }, 200);
+  setTimeout(focusBook, 200);
 </script>
 </body>
 </html>
