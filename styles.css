@@ -135,7 +135,22 @@ body{
 .hero-grid{display:grid;grid-template-columns:1.3fr 0.9fr;gap:30px;align-items:center}
 .hero-copy h1{margin:0 0 14px;font-size:36px;letter-spacing:.03em}
 .hero-logo-img{width:min(220px, 70%);height:auto;margin-bottom:12px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.4))}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;align-items:center;margin:18px 0}
+.hero-cta-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.hero-cta-gallery{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 72px));
+  gap:10px;
+}
+.hero-cta-gallery img{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  background:var(--panel);
+}
 .hero-stats{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:12px;margin-top:18px}
 .stat{background:rgba(255,255,255,.05);border:1px solid var(--line);padding:12px;border-radius:12px}
 .stat-num{display:block;font-size:20px;font-weight:700}
@@ -221,6 +236,9 @@ body{
   .contact-grid{grid-template-columns:1fr}
   .hero-grid{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr}
+  .hero-cta{justify-content:center}
+  .hero-cta-gallery{grid-template-columns:repeat(2, minmax(0, 60px))}
+  .hero-cta-gallery img{width:60px;height:60px}
   .steps{grid-template-columns:1fr}
   .onas-grid{grid-template-columns:1fr}
   .keypoints{grid-template-columns:1fr}
