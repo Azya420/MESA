@@ -29,7 +29,7 @@ body{
 .page-portfolio .book2{max-height:100vh}
 .page-portfolio main.wrap{max-width:none;padding:0}
 .page-portfolio .section{padding:0}
-.page-portfolio .book2-stage{height:100vh}
+.page-portfolio .book2-stage{height:100vh;align-items:flex-start}
 .page-portfolio .book2{width:100vw;height:100vh;max-height:100vh;aspect-ratio:auto}
 .tag{font-size:12px; color:var(--muted)}
 .nav{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
