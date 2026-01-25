@@ -27,7 +27,6 @@ body{
 .brand{display:flex; flex-direction:column; gap:6px}
 .logo-img{width:auto; height:44px; display:block}
 .page-portfolio .book2{max-height:100vh}
-.page-portfolio .topbar{display:none}
 .page-portfolio main.wrap{max-width:none;padding:0}
 .page-portfolio .section{padding:0}
 .page-portfolio .book2-wrap{padding:0}
