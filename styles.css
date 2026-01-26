@@ -228,9 +228,9 @@ body.page-contact{
 .section-stack{display:flex;flex-direction:column;gap:28px;padding:24px 0 10px}
 .onas-layout{
   display:grid;
-  grid-template-columns:minmax(80px, 140px) minmax(0, 1fr) minmax(80px, 140px);
+  grid-template-columns:minmax(60px, 120px) minmax(0, 1fr) minmax(40px, 80px);
   grid-template-areas:"nav slider spacer";
-  gap:8px;
+  gap:0;
   align-items:start;
   padding:8px 0 2px;
   min-height:calc(100vh - 100px);
@@ -244,7 +244,7 @@ body.page-contact{
   display:flex;
   gap:10px;
   padding:10px 0 0;
-  margin-left:-24px;
+  margin-left:-40px;
   flex-wrap:wrap;
   flex-direction:column;
   align-items:flex-start;
@@ -280,17 +280,17 @@ body.page-contact{
   display:flex;
   align-items:center;
   justify-content:center;
-  justify-self:center;
+  justify-self:stretch;
   width:100%;
 }
 .slider-frame{
   display:flex;
   flex-direction:column;
   gap:12px;
-  height:100%;
+  height:calc(100vh - 130px);
   width:100%;
-  max-width:1680px;
-  max-height:calc(100vh - 120px);
+  max-width:100%;
+  max-height:calc(100vh - 130px);
   margin:0 auto;
 }
 .slider-frame img{
