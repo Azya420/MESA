@@ -228,16 +228,23 @@ body.page-contact{
 .section-stack{display:flex;flex-direction:column;gap:28px;padding:24px 0 10px}
 .onas-layout{
   display:grid;
-  grid-template-columns:minmax(200px, 240px) minmax(0, 1fr);
-  gap:24px;
+  grid-template-columns:minmax(140px, 200px) minmax(0, 1fr) minmax(140px, 200px);
+  grid-template-areas:"nav slider spacer";
+  gap:20px;
   align-items:start;
   padding:24px 0 10px;
   min-height:calc(100vh - 140px);
 }
+.onas-layout::after{
+  content:"";
+  grid-area:spacer;
+}
 .subnav{
+  grid-area:nav;
   display:flex;
   gap:10px;
   padding:10px 0 0;
+  margin-left:-8px;
   flex-wrap:wrap;
   flex-direction:column;
   align-items:flex-start;
@@ -264,6 +271,7 @@ body.page-contact{
 .keypoint span{display:block;font-weight:600;margin-bottom:6px}
 .keypoint p{margin:0;color:var(--muted);font-size:13px}
 .onas-slider{
+  grid-area:slider;
   background:transparent;
   border:none;
   border-radius:0;
@@ -271,11 +279,14 @@ body.page-contact{
   height:100%;
   display:flex;
   align-items:center;
+  justify-content:center;
+  justify-self:center;
+  width:100%;
 }
-.slider-frame{display:flex;flex-direction:column;gap:12px;height:100%;width:100%}
+.slider-frame{display:flex;flex-direction:column;gap:12px;height:100%;width:100%;max-width:1200px;margin:0 auto}
 .slider-frame img{
   width:100%;
-  max-height:min(100%, calc(100vh - 220px));
+  max-height:min(100%, calc(100vh - 200px));
   object-fit:contain;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.1);
@@ -324,7 +335,13 @@ body.page-contact{
   .keypoints{grid-template-columns:1fr}
   .onas-layout{
     grid-template-columns:1fr;
+    grid-template-areas:
+      "nav"
+      "slider";
     min-height:auto;
+  }
+  .onas-layout::after{
+    content:none;
   }
   .onas-slider{
     height:auto;
