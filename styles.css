@@ -234,6 +234,7 @@ body.page-contact{
   align-items:start;
   padding:8px 0 2px;
   min-height:calc(100vh - 100px);
+  transform:translateX(-80px);
 }
 .subnav{
   grid-area:nav;
@@ -344,6 +345,7 @@ body.page-contact{
       "nav"
       "slider";
     min-height:auto;
+    transform:none;
   }
   .onas-slider{
     height:auto;
