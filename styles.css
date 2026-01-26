@@ -335,6 +335,10 @@ body.page-contact{
 .page-home .hero-grid{grid-template-columns:1.1fr 0.9fr}
 .page-home .hero-card,
 .page-home .hero-stats{display:none}
+.page-home .hero-panel{
+  background:linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.05)), rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.18);
+}
 .page-home .home-frame{
   max-width:980px;
   margin:14px auto 30px;
