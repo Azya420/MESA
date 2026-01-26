@@ -226,11 +226,21 @@ body.page-contact{
 .step-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
 .section-stack{display:flex;flex-direction:column;gap:28px;padding:24px 0 10px}
+.onas-layout{
+  display:grid;
+  grid-template-columns:minmax(200px, 240px) minmax(0, 1fr);
+  gap:24px;
+  align-items:start;
+  padding:24px 0 10px;
+  min-height:calc(100vh - 140px);
+}
 .subnav{
   display:flex;
   gap:10px;
   padding:10px 0 0;
   flex-wrap:wrap;
+  flex-direction:column;
+  align-items:flex-start;
 }
 .subnav-btn{
   background:rgba(255,255,255,.04);
@@ -240,8 +250,10 @@ body.page-contact{
   font-size:12px;
   text-transform:uppercase;
   letter-spacing:.06em;
-  border-radius:999px;
+  border-radius:12px;
   cursor:pointer;
+  width:100%;
+  text-align:left;
 }
 .subnav-btn.active,
 .subnav-btn:hover{background:rgba(255,255,255,.12)}
@@ -251,9 +263,24 @@ body.page-contact{
 .keypoint{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px}
 .keypoint span{display:block;font-weight:600;margin-bottom:6px}
 .keypoint p{margin:0;color:var(--muted);font-size:13px}
-.onas-slider{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
-.slider-frame{display:flex;flex-direction:column;gap:12px}
-.slider-frame img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+.onas-slider{
+  background:rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:18px;
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+.slider-frame{display:flex;flex-direction:column;gap:12px;height:100%;width:100%}
+.slider-frame img{
+  width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:var(--shadow);
+}
 .slider-meta span{display:block;font-weight:600;margin-bottom:6px}
 .slider-meta p{margin:0;color:var(--muted);font-size:14px}
 .slider-controls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;color:var(--muted)}
@@ -295,6 +322,13 @@ body.page-contact{
   .steps{grid-template-columns:1fr}
   .onas-grid{grid-template-columns:1fr}
   .keypoints{grid-template-columns:1fr}
+  .onas-layout{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .onas-slider{
+    height:auto;
+  }
 }
 
 
