@@ -228,12 +228,12 @@ body.page-contact{
 .section-stack{display:flex;flex-direction:column;gap:28px;padding:24px 0 10px}
 .onas-layout{
   display:grid;
-  grid-template-columns:minmax(120px, 180px) minmax(0, 1fr) minmax(120px, 180px);
+  grid-template-columns:minmax(100px, 160px) minmax(0, 1fr) minmax(100px, 160px);
   grid-template-areas:"nav slider spacer";
-  gap:16px;
+  gap:12px;
   align-items:start;
-  padding:16px 0 6px;
-  min-height:calc(100vh - 120px);
+  padding:10px 0 4px;
+  min-height:calc(100vh - 110px);
 }
 .onas-layout::after{
   content:"";
@@ -289,8 +289,8 @@ body.page-contact{
   gap:12px;
   height:100%;
   width:100%;
-  max-width:1400px;
-  max-height:calc(100vh - 160px);
+  max-width:1560px;
+  max-height:calc(100vh - 140px);
   margin:0 auto;
 }
 .slider-frame img{
