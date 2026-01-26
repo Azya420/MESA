@@ -319,18 +319,6 @@ body.page-contact{
 .page-home{
   background:linear-gradient(180deg, rgba(26,26,30,.85), rgba(28,28,32,.85)), #1c1c22;
 }
-.page-home .topbar{
-  position:static;
-  background:#0b0b0c;
-  border-bottom:1px solid rgba(255,255,255,.12);
-  box-shadow:none;
-  backdrop-filter:none;
-}
-.page-home .topbar-inner{padding:10px 0}
-.page-home .brand{gap:0}
-.page-home .logo-img{height:32px}
-.page-home .nav a{font-size:14px;font-weight:600}
-.page-home .nav a[aria-current="page"]{background:transparent}
 .page-home .footer{display:none}
 .page-home .hero-grid{grid-template-columns:1.1fr 0.9fr}
 .page-home .hero-card,
