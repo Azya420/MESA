@@ -31,6 +31,14 @@
     <div class="book2-wrap">
       <div class="book2-stage">
         <div id="book2" class="book2" tabindex="0" aria-label="Portfolio flipbook (2 strony)"></div>
+        <div class="portfolio-controls" aria-hidden="false">
+          <button class="portfolio-arrow left" type="button" data-direction="prev" aria-label="Poprzednia rozkładówka">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="portfolio-arrow right" type="button" data-direction="next" aria-label="Następna rozkładówka">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -48,6 +56,9 @@
   const total = spreads.length;
 
   const book = document.getElementById('book2');
+  const controls = document.querySelector('.portfolio-controls');
+  const prevBtn = controls.querySelector('[data-direction="prev"]');
+  const nextBtn = controls.querySelector('[data-direction="next"]');
 
   let current = 0; // spread index
   let animating = false;
@@ -84,7 +95,7 @@
     spread.appendChild(leftPane);
     spread.appendChild(rightPane);
     book.appendChild(spread);
-
+    updateNavButtons();
   }
 
   function animateTurn(direction){
@@ -139,12 +150,26 @@
   function goNext(){ animateTurn("next"); }
   function goPrev(){ animateTurn("prev"); }
 
+  function updateNavButtons(){
+    prevBtn.disabled = current <= 0;
+    nextBtn.disabled = current >= total - 1;
+  }
+
   // Click zones: right half next, left half prev
   book.addEventListener("click", function(e){
     const rect = book.getBoundingClientRect();
     const x = e.clientX - rect.left;
     if (x > rect.width * 0.55) goNext();
     else goPrev();
+  });
+
+  controls.addEventListener("click", function(e){
+    const target = e.target.closest("button");
+    if (!target) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (target.dataset.direction === "next") goNext();
+    if (target.dataset.direction === "prev") goPrev();
   });
 
   book.addEventListener("keydown", function(e){
