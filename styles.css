@@ -289,14 +289,17 @@ body.page-contact{
   max-width:100%;
   max-height:calc(100vh - 130px);
   margin:0 auto;
-}
-.slider-frame img{
-  width:100%;
-  max-height:100%;
-  object-fit:contain;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.1);
   box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.slider-frame img{
+  width:100%;
+  height:100%;
+  max-height:100%;
+  object-fit:cover;
+  display:block;
 }
 .slider-meta span{display:block;font-weight:600;margin-bottom:6px}
 .slider-meta p{margin:0;color:var(--muted);font-size:14px}
