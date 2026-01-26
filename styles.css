@@ -16,9 +16,6 @@ body{
   background:radial-gradient(1200px 600px at 70% -20%, rgba(255,255,255,.12), transparent 60%), var(--bg);
   color:var(--text);
 }
-body.page-contact{
-  background:var(--bg);
-}
 .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 .topbar{
   position:sticky; top:0; z-index:20;
