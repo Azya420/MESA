@@ -228,16 +228,13 @@ body.page-contact{
 .section-stack{display:flex;flex-direction:column;gap:28px;padding:24px 0 10px}
 .onas-layout{
   display:grid;
-  grid-template-columns:minmax(80px, 140px) minmax(0, 1fr) minmax(80px, 140px);
-  grid-template-areas:"nav slider spacer";
-  gap:8px;
+  grid-template-columns:minmax(140px, 200px) minmax(0, 1fr);
+  grid-template-areas:"nav slider";
+  gap:16px;
   align-items:start;
   padding:8px 0 2px;
   min-height:calc(100vh - 100px);
-}
-.onas-layout::after{
-  content:"";
-  grid-area:spacer;
+  transform:translateX(-80px);
 }
 .subnav{
   grid-area:nav;
@@ -280,17 +277,17 @@ body.page-contact{
   display:flex;
   align-items:center;
   justify-content:center;
-  justify-self:center;
+  justify-self:stretch;
   width:100%;
 }
 .slider-frame{
   display:flex;
   flex-direction:column;
   gap:12px;
-  height:100%;
+  height:calc(100vh - 130px);
   width:100%;
-  max-width:1680px;
-  max-height:calc(100vh - 120px);
+  max-width:100%;
+  max-height:calc(100vh - 130px);
   margin:0 auto;
 }
 .slider-frame img{
@@ -348,9 +345,7 @@ body.page-contact{
       "nav"
       "slider";
     min-height:auto;
-  }
-  .onas-layout::after{
-    content:none;
+    transform:none;
   }
   .onas-slider{
     height:auto;
