@@ -274,11 +274,11 @@ body{
 .contact-panel h2{margin-top:0}
 .contact-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
 .contact-note{margin-top:14px;color:var(--muted);font-size:13px}
-.contact-highlight{background:linear-gradient(150deg, rgba(255,255,255,.08), rgba(0,0,0,.35)), var(--panel-soft)}
-.contact-block{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.contact-highlight{background:linear-gradient(145deg, rgba(255,255,255,.04), rgba(0,0,0,.35)), var(--panel)}
+.contact-block{display:flex;flex-direction:column;gap:6px;margin-top:10px}
 .contact-block span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .contact-block a{color:var(--text);text-decoration:none;font-weight:600}
-.contact-highlight .contact-block:first-of-type{margin-top:8px}
+.contact-highlight .contact-block:first-of-type{margin-top:4px}
 @media (max-width: 900px){
   .audience{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
