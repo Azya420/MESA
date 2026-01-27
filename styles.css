@@ -15,6 +15,9 @@ body{
               radial-gradient(1000px 500px at 80% 10%, rgba(255,255,255,.05), transparent 60%),
               var(--bg);
   color:var(--text);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 .topbar{
@@ -63,6 +66,7 @@ body{
 .section{padding:22px 0}
 .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:10px}
 .section-head h2{margin:0; font-size:22px}
+main{flex:1}
 .page img{
   width:100%;
   height:auto;
