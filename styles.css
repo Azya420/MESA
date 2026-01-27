@@ -428,6 +428,12 @@ body.page-contact main{
 .page-home{
   background:linear-gradient(180deg, rgba(26,26,30,.85), rgba(28,28,32,.85)), #1c1c22;
 }
+.page-home .hero-panel{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  padding:0;
+}
 .page-home .hero-grid{grid-template-columns:1.1fr 0.9fr}
 .page-home .hero-card,
 .page-home .hero-stats{display:none}
