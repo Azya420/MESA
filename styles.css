@@ -440,7 +440,15 @@ body.page-contact{
 .book2-progress{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);}
 .book2-progress .bar{width:180px;height:8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);overflow:hidden;}
 .book2-progress .bar>div{height:100%;width:0%;background:rgba(255,255,255,.25);}
-.book2-stage{width:100%;display:flex;justify-content:center;}
+.book2-stage{width:100%;display:flex;justify-content:center;position:relative;}
+.book2-nav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;pointer-events:none;}
+.book2-nav-btn{pointer-events:auto;width:58px;height:58px;border-radius:18px;border:1px solid rgba(255,255,255,.25);background:rgba(10,12,18,.55);color:#fff;font-size:34px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;}
+.book2-nav-btn:hover{transform:translateY(-2px);background:rgba(20,24,32,.75);border-color:rgba(255,255,255,.4);}
+.book2-nav-btn:focus-visible{outline:2px solid rgba(255,255,255,.9);outline-offset:3px;}
+.book2-nav-btn:disabled{opacity:.35;cursor:not-allowed;transform:none;}
+.book2-nav-btn span{display:block;transform:translateY(-2px);}
+.book2-nav-btn.prev{margin-right:auto;}
+.book2-nav-btn.next{margin-left:auto;}
 .book2{position:relative;width:min(1400px,100%);aspect-ratio:16/9;border-radius:0;border:0;background:transparent;box-shadow:none;overflow:hidden;perspective:1800px;}
 .book2::before{content:none;}
 .book2 .spread{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:center;padding:0;gap:0;}
@@ -457,3 +465,4 @@ body.page-contact{
 .book2 .turnpage.left .shade{background:linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%);}
 .book2.is-animating{cursor:wait;}
 @media (max-width:900px){.book2-progress .bar{width:120px}.book2{aspect-ratio:4/3}.book2 .pageimg{width:96%}}
+@media (max-width:900px){.book2-nav{padding:0 14px}.book2-nav-btn{width:46px;height:46px;border-radius:14px;font-size:26px}}
