@@ -437,7 +437,10 @@ body.page-contact main{
   box-shadow:none;
   padding:0;
 }
-.page-home .hero-grid{grid-template-columns:1.1fr 0.9fr}
+.page-home .hero-grid{
+  grid-template-columns:1.1fr 0.9fr;
+  align-items:center;
+}
 .page-home .hero-copy{
   margin-left:-18px;
 }
