@@ -46,6 +46,11 @@ body.page-contact main{
 .page-portfolio .book2{width:100vw;height:100vh;max-height:100vh;aspect-ratio:auto}
 .page-portfolio .topbar{position:fixed;left:0;right:0}
 .page-portfolio .site-footer{border-top:0;margin-top:0}
+.page-portfolio .portfolio-download{
+  display:flex;
+  justify-content:center;
+  padding:28px 18px 48px;
+}
 .page-home .site-footer,
 .page-contact .site-footer,
 .page-about .site-footer{margin-top:0}
