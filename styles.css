@@ -37,7 +37,7 @@ body.page-contact main{
 }
 .topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:10px 0; gap:16px}
 .brand{display:flex; flex-direction:column; gap:6px}
-.logo-img{width:auto; height:36px; display:block}
+.logo-img{width:auto; height:26px; display:block}
 .page-portfolio .book2{max-height:100vh}
 .page-portfolio main.wrap{max-width:none;padding:0}
 .page-portfolio .section{padding:0}

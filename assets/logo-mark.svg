@@ -1,0 +1,5 @@
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="46" height="46" rx="12" stroke="#F5F0E6" stroke-width="2"/>
+  <path d="M13 34V14H23.5L29.5 26L35.5 14H46V34" stroke="#F5F0E6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="64" y="31" fill="#F5F0E6" font-family="'Inter', 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="2">MESA</text>
+</svg>
