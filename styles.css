@@ -47,9 +47,17 @@ body.page-contact main{
 .page-portfolio .topbar{position:fixed;left:0;right:0}
 .page-portfolio .site-footer{border-top:0;margin-top:0}
 .page-portfolio .portfolio-download{
+  position:absolute;
+  left:14px;
+  bottom:48px;
   display:flex;
-  justify-content:center;
-  padding:28px 18px 48px;
+  align-items:center;
+  z-index:2;
+}
+.page-portfolio .portfolio-download .btn{
+  padding:7px 12px;
+  font-size:12px;
+  border-radius:10px;
 }
 .page-home .site-footer,
 .page-contact .site-footer,
