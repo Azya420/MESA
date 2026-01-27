@@ -18,6 +18,12 @@ body{
 }
 body.page-contact{
   background:var(--bg);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+body.page-contact main{
+  flex:1;
 }
 .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 .topbar{
