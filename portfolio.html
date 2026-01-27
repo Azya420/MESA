@@ -100,6 +100,8 @@
 
   function updateNav(){
     if (!prevBtn || !nextBtn) return;
+    prevBtn.hidden = current <= 0;
+    nextBtn.hidden = current >= total - 1;
     prevBtn.disabled = current <= 0 || animating;
     nextBtn.disabled = current >= total - 1 || animating;
   }
