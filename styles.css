@@ -442,8 +442,8 @@ body.page-contact{
 .book2-progress .bar>div{height:100%;width:0%;background:rgba(255,255,255,.25);}
 .book2-stage{width:100%;display:flex;justify-content:center;position:relative;}
 .book2-nav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;pointer-events:none;}
-.book2-nav-btn{pointer-events:auto;width:58px;height:58px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(10,12,18,.55);color:#fff;font-size:34px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;}
-.book2-nav-btn:hover{transform:translateY(-2px);background:rgba(20,24,32,.75);border-color:rgba(255,255,255,.4);}
+.book2-nav-btn{pointer-events:auto;width:58px;height:58px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;font-size:34px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:none;transition:transform .2s ease, border-color .2s ease, opacity .2s ease;}
+.book2-nav-btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.85);}
 .book2-nav-btn:focus-visible{outline:2px solid rgba(255,255,255,.9);outline-offset:3px;}
 .book2-nav-btn:disabled{opacity:.35;cursor:not-allowed;transform:none;}
 .book2-nav-btn span{display:block;transform:translateY(-2px);}
