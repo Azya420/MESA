@@ -31,6 +31,14 @@
     <div class="book2-wrap">
       <div class="book2-stage">
         <div id="book2" class="book2" tabindex="0" aria-label="Portfolio flipbook (2 strony)"></div>
+        <div class="book2-nav" aria-hidden="true">
+          <button class="book2-nav-btn prev" id="book2-prev" type="button" aria-label="Poprzednia strona">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="book2-nav-btn next" id="book2-next" type="button" aria-label="Następna strona">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -48,6 +56,8 @@
   const total = spreads.length;
 
   const book = document.getElementById('book2');
+  const prevBtn = document.getElementById('book2-prev');
+  const nextBtn = document.getElementById('book2-next');
 
   let current = 0; // spread index
   let animating = false;
@@ -84,7 +94,14 @@
     spread.appendChild(leftPane);
     spread.appendChild(rightPane);
     book.appendChild(spread);
+    updateNav();
 
+  }
+
+  function updateNav(){
+    if (!prevBtn || !nextBtn) return;
+    prevBtn.disabled = current <= 0 || animating;
+    nextBtn.disabled = current >= total - 1 || animating;
   }
 
   function animateTurn(direction){
@@ -93,6 +110,7 @@
     if (direction === "prev" && current <= 0) return;
 
     animating = true;
+    updateNav();
     book.classList.add("is-animating");
     const layer = el("div","turnlayer");
     const turnPage = el("div","turnpage " + (direction === "next" ? "right" : "left"));
@@ -150,6 +168,16 @@
   book.addEventListener("keydown", function(e){
     if (e.key === "ArrowRight") { e.preventDefault(); goNext(); }
     if (e.key === "ArrowLeft") { e.preventDefault(); goPrev(); }
+  });
+
+  prevBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    goPrev();
+  });
+
+  nextBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    goNext();
   });
 
   // Touch swipe
