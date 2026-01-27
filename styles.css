@@ -202,7 +202,7 @@ body.page-contact main{
 .hero-panel{padding:34px}
 .hero-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:30px;align-items:start}
 .hero-brand{
-  font-size:40px;
+  font-size:48px;
   font-weight:700;
   letter-spacing:.2em;
   text-transform:uppercase;
