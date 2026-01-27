@@ -202,7 +202,7 @@ body.page-contact main{
 .hero-panel{padding:34px}
 .hero-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:30px;align-items:start}
 .hero-copy h1{margin:0 0 14px;font-size:36px;letter-spacing:.03em}
-.hero-logo-img{width:min(220px, 70%);height:auto;margin-bottom:12px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.4))}
+.page-home .hero-copy h1{margin-top:6px}
 .hero-contact{margin-top:18px}
 .hero-actions{display:flex;justify-content:flex-end;align-items:stretch}
 .hero-cta{display:flex;flex-direction:column;gap:14px;align-items:stretch;margin:18px 0;width:100%}
