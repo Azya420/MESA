@@ -35,9 +35,9 @@ body.page-contact main{
   backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
-.topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px}
+.topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:10px 0; gap:16px}
 .brand{display:flex; flex-direction:column; gap:6px}
-.logo-img{width:auto; height:44px; display:block}
+.logo-img{width:auto; height:36px; display:block}
 .page-portfolio .book2{max-height:100vh}
 .page-portfolio main.wrap{max-width:none;padding:0}
 .page-portfolio .section{padding:0}
