@@ -430,8 +430,18 @@ body.page-contact main{
   .hero-cta{align-items:center;text-align:center}
   .hero-actions{justify-content:center}
   .hero-cta-portfolio{align-items:center}
-  .hero-cta-gallery{grid-template-columns:repeat(2, minmax(0, 90px))}
-  .hero-cta-gallery img{width:90px;height:90px}
+  .hero-cta-gallery{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    width:100%;
+    justify-content:center;
+    justify-items:center;
+  }
+  .hero-cta-gallery img{
+    width:100%;
+    height:auto;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+  }
   .steps{grid-template-columns:1fr}
   .onas-grid{grid-template-columns:1fr}
   .keypoints{grid-template-columns:1fr}
@@ -475,7 +485,12 @@ body.page-contact main{
   .hero-cta-portfolio{padding:14px}
   .hero-cta-title{font-size:13px}
   .hero-cta-gallery{gap:10px}
-  .hero-cta-gallery img{width:78px;height:78px}
+  .hero-cta-gallery img{
+    width:100%;
+    height:auto;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+  }
   .audience-card{padding:18px 16px}
   .steps{gap:14px}
   .step-card{padding:16px}
