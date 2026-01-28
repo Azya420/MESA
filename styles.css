@@ -430,7 +430,11 @@ body.page-contact main{
   .hero-cta{align-items:center;text-align:center}
   .hero-actions{justify-content:center}
   .hero-cta-portfolio{align-items:center}
-  .hero-cta-gallery{grid-template-columns:repeat(2, minmax(0, 90px))}
+  .hero-cta-gallery{
+    grid-template-columns:repeat(2, minmax(0, 90px));
+    justify-content:center;
+    justify-items:center;
+  }
   .hero-cta-gallery img{width:90px;height:90px}
   .steps{grid-template-columns:1fr}
   .onas-grid{grid-template-columns:1fr}
