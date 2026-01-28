@@ -454,6 +454,23 @@ body.page-contact main{
   .hero-panel{padding:24px 0}
   .hero-brand-logo{width:120px}
   .hero-copy h1{font-size:28px}
+  .page-home .hero-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .page-home .hero-copy{
+    display:contents;
+  }
+  .page-home .hero-brand{justify-content:center}
+  .page-home .lead{margin:0 0 14px}
+  .page-home .hero-brand{order:1}
+  .page-home .hero-copy h1{order:2}
+  .page-home .lead{order:3}
+  .page-home .hero-actions{order:4;width:100%}
+  .page-home .hero-contact{order:5}
+  .page-home .hero-card{order:6}
   .hero-cta{gap:12px}
   .hero-cta-portfolio{padding:14px}
   .hero-cta-title{font-size:13px}
