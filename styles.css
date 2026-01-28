@@ -454,6 +454,10 @@ body.page-contact main{
   .hero-panel{padding:24px 0}
   .hero-brand-logo{width:120px}
   .hero-copy h1{font-size:28px}
+  .page-home .hero-copy{display:contents}
+  .page-home .hero-actions{order:3}
+  .page-home .hero-contact{order:4}
+  .page-home .hero-card{order:5}
   .hero-cta{gap:12px}
   .hero-cta-portfolio{padding:14px}
   .hero-cta-title{font-size:13px}
