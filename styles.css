@@ -168,6 +168,22 @@ body.page-contact main{
   .section-head{flex-direction:column; align-items:flex-start}
   .grid-2{grid-template-columns:1fr}
 }
+@media (max-width: 640px){
+  .wrap{padding:0 16px}
+  .topbar-inner{flex-direction:column; align-items:flex-start; padding:12px 0}
+  .brand{align-items:flex-start}
+  .logo-img{height:36px}
+  .nav{width:100%; justify-content:flex-start; gap:8px}
+  .nav a{font-size:12px; padding:6px 10px}
+  .hero{padding:18px 0 6px}
+  .hero h1{font-size:28px}
+  .lead{font-size:16px}
+  .section{padding:18px 0}
+  .card{padding:14px}
+  .site-footer{padding:12px 0}
+  .footer-links a{font-size:11px}
+  .footer-contact a{font-size:11px}
+}
 
 
 .brandlink{color:inherit;text-decoration:none}
@@ -431,6 +447,28 @@ body.page-contact main{
     height:auto;
   }
 }
+@media (max-width: 640px){
+  .panel{padding:24px 18px}
+  .panel-title{font-size:24px}
+  .panel-subtitle{font-size:14px}
+  .hero-panel{padding:24px 0}
+  .hero-brand-logo{width:120px}
+  .hero-copy h1{font-size:28px}
+  .hero-cta{gap:12px}
+  .hero-cta-portfolio{padding:14px}
+  .hero-cta-title{font-size:13px}
+  .hero-cta-gallery{gap:10px}
+  .hero-cta-gallery img{width:78px;height:78px}
+  .audience-card{padding:18px 16px}
+  .steps{gap:14px}
+  .step-card{padding:16px}
+  .cta-row{gap:10px}
+  .contact-panel{padding:18px 18px 20px}
+  .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
+  .subnav-btn{width:auto; text-align:center; padding:8px 10px}
+  .slider-frame{height:auto; max-height:none}
+  .slider-meta p{font-size:13px}
+}
 
 
 /* ===== Portfolio: Book (v3) ===== */
@@ -506,6 +544,13 @@ body.page-contact main{
   .page-home .home-logo{width:200px}
   .page-home .hero-copy{margin-left:0}
 }
+@media (max-width: 640px){
+  .page-home .home-frame{margin:8px 8px 20px;padding:14px;border-width:6px}
+  .page-home .home-hero{padding:24px 16px;border-width:6px}
+  .page-home .home-hero h1{font-size:26px}
+  .page-home .home-logo{width:160px}
+  .page-home .home-lead{font-size:15px}
+}
 .page::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.18) 55%, rgba(0,0,0,.28) 100%);opacity:.55;pointer-events:none;}
 .page.is-active{z-index:50;}
 .page.is-behind{z-index:10;filter:brightness(.92);}
@@ -515,6 +560,10 @@ body.page-contact main{
 .page .frontface{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;}
 .page .label{position:absolute;bottom:14px;right:16px;font-size:12px;color:rgba(255,255,255,.72);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.10);padding:6px 8px;border-radius:999px;backdrop-filter:blur(8px);}
 @media (max-width:900px){.progress .bar{width:120px}.book{aspect-ratio:4/3}.page img{width:94%}}
+@media (max-width:640px){
+  .book-toolbar{flex-direction:column; align-items:flex-start}
+  .book-toolbar .controls{width:100%}
+}
 
 
 /* ===== Portfolio: Two-page Book (v3.1) ===== */
@@ -555,3 +604,9 @@ body.page-contact main{
 .book2.is-animating{cursor:wait;}
 @media (max-width:900px){.book2-progress .bar{width:120px}.book2{aspect-ratio:4/3}.book2 .pageimg{width:96%}}
 @media (max-width:900px){.book2-nav{padding:0 14px}.book2-nav-btn{width:46px;height:46px;border-radius:50%;font-size:26px}}
+@media (max-width:640px){
+  .book2-toolbar{flex-direction:column; align-items:flex-start}
+  .book2-toolbar .controls{width:100%}
+  .book2-nav{padding:0 8px}
+  .book2-nav-btn{width:40px;height:40px;font-size:22px}
+}
