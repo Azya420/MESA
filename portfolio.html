@@ -59,13 +59,15 @@
     ["assets/mesa_na_strone_15.webp", "assets/mesa_na_strone_16.webp"]
   ]; // [ [left,right], ... ]
   const pageOffset = 1;
-  const total = spreads.length;
+  const pages = spreads.flat();
 
   const book = document.getElementById('book2');
   const prevBtn = document.getElementById('book2-prev');
   const nextBtn = document.getElementById('book2-next');
+  const mobileQuery = window.matchMedia("(max-width: 640px)");
 
-  let current = 0; // spread index
+  let mode = mobileQuery.matches ? "single" : "spread";
+  let current = 0; // spread or page index
   let animating = false;
 
   function el(tag, cls){
@@ -110,19 +112,67 @@
       });
     }
     updateNav();
+  }
 
+  function renderPage(idx, opts = {}){
+    const keepExisting = opts.keepExisting === true;
+    if (!keepExisting) book.innerHTML = "";
+    const page = el("div","single-page" + (opts.entering ? " is-entering" : ""));
+    const loading = opts.loading || "eager";
+    const pageNum = pageOffset + idx;
+
+    const pane = el("div","pagepane");
+    pane.appendChild(img(pages[idx], "Strona " + pageNum, { loading }));
+    const pn = el("div","pagenum"); pn.textContent = String(pageNum);
+    pane.appendChild(pn);
+    page.appendChild(pane);
+    book.appendChild(page);
+
+    if (opts.entering) {
+      requestAnimationFrame(function(){
+        page.classList.remove("is-entering");
+      });
+    }
+    updateNav();
+  }
+
+  function totalCount(){
+    return mode === "single" ? pages.length : spreads.length;
   }
 
   function updateNav(){
     if (!prevBtn || !nextBtn) return;
     prevBtn.disabled = current <= 0 || animating;
-    nextBtn.disabled = current >= total - 1 || animating;
+    nextBtn.disabled = current >= totalCount() - 1 || animating;
+  }
+
+  function setMode(nextMode){
+    if (mode === nextMode) return;
+    mode = nextMode;
+    current = 0;
+    book.classList.toggle("is-single", mode === "single");
+    animating = false;
+    if (mode === "single") renderPage(current, { loading: "eager" });
+    else renderSpread(current, { loading: "eager" });
+    updateNav();
   }
 
   function animateTurn(direction){
     if (animating) return;
-    if (direction === "next" && current >= total - 1) return;
+    if (direction === "next" && current >= totalCount() - 1) return;
     if (direction === "prev" && current <= 0) return;
+
+    if (mode === "single"){
+      animating = true;
+      updateNav();
+      const target = (direction === "next") ? current + 1 : current - 1;
+      renderPage(target, { loading: "eager" });
+      current = target;
+      animating = false;
+      updateNav();
+      setTimeout(function(){ book.focus(); }, 50);
+      return;
+    }
 
     animating = true;
     updateNav();
@@ -217,8 +267,14 @@
     touchStartX = null;
   }, {passive:true});
 
-  renderSpread(current);
+  book.classList.toggle("is-single", mode === "single");
+  if (mode === "single") renderPage(current);
+  else renderSpread(current);
   setTimeout(function(){ book.focus(); }, 200);
+
+  mobileQuery.addEventListener("change", function(e){
+    setMode(e.matches ? "single" : "spread");
+  });
 </script>
 
 <footer class="site-footer">
