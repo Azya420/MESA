@@ -51,8 +51,6 @@
 
 <script>
   const spreads = [
-    ["assets/mesa_na_strone_01.webp", "assets/mesa_na_strone_02.webp"],
-    ["assets/mesa_na_strone_03.webp", "assets/mesa_na_strone_04.webp"],
     ["assets/mesa_na_strone_05.webp", "assets/mesa_na_strone_06.webp"],
     ["assets/mesa_na_strone_07.webp", "assets/mesa_na_strone_08.webp"],
     ["assets/mesa_na_strone_09.webp", "assets/mesa_na_strone_10.webp"],
@@ -60,6 +58,7 @@
     ["assets/mesa_na_strone_13.webp", "assets/mesa_na_strone_14.webp"],
     ["assets/mesa_na_strone_15.webp", "assets/mesa_na_strone_16.webp"]
   ]; // [ [left,right], ... ]
+  const pageOffset = 5;
   const total = spreads.length;
 
   const book = document.getElementById('book2');
@@ -89,13 +88,15 @@
     const spread = el("div","spread");
 
     const leftPane = el("div","pagepane");
-    leftPane.appendChild(img(spreads[idx][0], "Strona " + (idx*2+1)));
-    const ln = el("div","pagenum"); ln.textContent = String(idx*2+1);
+    const leftNum = pageOffset + idx * 2;
+    leftPane.appendChild(img(spreads[idx][0], "Strona " + leftNum));
+    const ln = el("div","pagenum"); ln.textContent = String(leftNum);
     leftPane.appendChild(ln);
 
     const rightPane = el("div","pagepane");
-    rightPane.appendChild(img(spreads[idx][1], "Strona " + (idx*2+2)));
-    const rn = el("div","pagenum"); rn.textContent = String(idx*2+2);
+    const rightNum = pageOffset + idx * 2 + 1;
+    rightPane.appendChild(img(spreads[idx][1], "Strona " + rightNum));
+    const rn = el("div","pagenum"); rn.textContent = String(rightNum);
     rightPane.appendChild(rn);
 
     spread.appendChild(leftPane);
@@ -132,11 +133,15 @@
     const nextR = spreads[target][1];
 
     if (direction === "next"){
-      faceFront.appendChild(img(curR, "Strona " + (current*2+2)));
-      faceBack.appendChild(img(nextL, "Strona " + (target*2+1)));
+      const curRightNum = pageOffset + current * 2 + 1;
+      const nextLeftNum = pageOffset + target * 2;
+      faceFront.appendChild(img(curR, "Strona " + curRightNum));
+      faceBack.appendChild(img(nextL, "Strona " + nextLeftNum));
     } else {
-      faceFront.appendChild(img(curL, "Strona " + (current*2+1)));
-      faceBack.appendChild(img(nextR, "Strona " + (target*2+2)));
+      const curLeftNum = pageOffset + current * 2;
+      const nextRightNum = pageOffset + target * 2 + 1;
+      faceFront.appendChild(img(curL, "Strona " + curLeftNum));
+      faceBack.appendChild(img(nextR, "Strona " + nextRightNum));
     }
 
     const shade = el("div","shade");
