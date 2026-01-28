@@ -74,12 +74,12 @@
     return n;
   }
 
-  function img(src, alt){
+  function img(src, alt, opts = {}){
     const i = document.createElement('img');
     i.className = 'pageimg';
     i.src = src;
     i.alt = alt;
-    i.loading = 'lazy';
+    i.loading = opts.loading || 'lazy';
     return i;
   }
 
@@ -87,16 +87,17 @@
     const keepExisting = opts.keepExisting === true;
     if (!keepExisting) book.innerHTML = "";
     const spread = el("div","spread" + (opts.entering ? " is-entering" : ""));
+    const loading = opts.loading || "eager";
 
     const leftPane = el("div","pagepane");
     const leftNum = pageOffset + idx * 2;
-    leftPane.appendChild(img(spreads[idx][0], "Strona " + leftNum));
+    leftPane.appendChild(img(spreads[idx][0], "Strona " + leftNum, { loading }));
     const ln = el("div","pagenum"); ln.textContent = String(leftNum);
     leftPane.appendChild(ln);
 
     const rightPane = el("div","pagepane");
     const rightNum = pageOffset + idx * 2 + 1;
-    rightPane.appendChild(img(spreads[idx][1], "Strona " + rightNum));
+    rightPane.appendChild(img(spreads[idx][1], "Strona " + rightNum, { loading }));
     const rn = el("div","pagenum"); rn.textContent = String(rightNum);
     rightPane.appendChild(rn);
 
@@ -141,13 +142,13 @@
     if (direction === "next"){
       const curRightNum = pageOffset + current * 2 + 1;
       const nextLeftNum = pageOffset + target * 2;
-      faceFront.appendChild(img(curR, "Strona " + curRightNum));
-      faceBack.appendChild(img(nextL, "Strona " + nextLeftNum));
+      faceFront.appendChild(img(curR, "Strona " + curRightNum, { loading: "eager" }));
+      faceBack.appendChild(img(nextL, "Strona " + nextLeftNum, { loading: "eager" }));
     } else {
       const curLeftNum = pageOffset + current * 2;
       const nextRightNum = pageOffset + target * 2 + 1;
-      faceFront.appendChild(img(curL, "Strona " + curLeftNum));
-      faceBack.appendChild(img(nextR, "Strona " + nextRightNum));
+      faceFront.appendChild(img(curL, "Strona " + curLeftNum, { loading: "eager" }));
+      faceBack.appendChild(img(nextR, "Strona " + nextRightNum, { loading: "eager" }));
     }
 
     const shade = el("div","shade");
@@ -156,6 +157,8 @@
     turnPage.appendChild(shade);
     layer.appendChild(turnPage);
     book.appendChild(layer);
+
+    renderSpread(target, { entering: true, keepExisting: true, loading: "eager" });
 
     requestAnimationFrame(function(){
       const rot = (direction === "next") ? -180 : 180;
@@ -166,10 +169,11 @@
     turnPage.addEventListener("transitionend", function(){
       const spread = book.querySelector(".spread");
       if (spread) spread.remove();
+      layer.remove();
       current = target;
       animating = false;
       book.classList.remove("is-animating");
-      renderSpread(current, { entering: true, keepExisting: true });
+      updateNav();
       setTimeout(function(){ book.focus(); }, 50);
     }, { once: true });
   }
