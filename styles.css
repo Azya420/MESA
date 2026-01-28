@@ -496,6 +496,7 @@ body.page-contact main{
   .step-card{padding:16px}
   .cta-row{gap:10px}
   .contact-panel{padding:18px 18px 20px}
+  .page-contact main{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
   .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
   .subnav-btn{width:auto; text-align:center; padding:8px 10px}
   .slider-frame{height:auto; max-height:none}
