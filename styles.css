@@ -498,6 +498,7 @@ body.page-contact main{
   .contact-panel{padding:18px 18px 20px}
   .page-contact{min-height:100dvh}
   .page-contact main{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+  .page-contact .contact-grid{margin-bottom:16px}
   .page-contact .footer-divider{margin-top:auto}
   .page-contact .site-footer{margin-top:0}
   .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
