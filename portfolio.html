@@ -83,9 +83,10 @@
     return i;
   }
 
-  function renderSpread(idx){
-    book.innerHTML = "";
-    const spread = el("div","spread");
+  function renderSpread(idx, opts = {}){
+    const keepExisting = opts.keepExisting === true;
+    if (!keepExisting) book.innerHTML = "";
+    const spread = el("div","spread" + (opts.entering ? " is-entering" : ""));
 
     const leftPane = el("div","pagepane");
     const leftNum = pageOffset + idx * 2;
@@ -102,6 +103,11 @@
     spread.appendChild(leftPane);
     spread.appendChild(rightPane);
     book.appendChild(spread);
+    if (opts.entering) {
+      requestAnimationFrame(function(){
+        spread.classList.remove("is-entering");
+      });
+    }
     updateNav();
 
   }
@@ -158,10 +164,12 @@
     });
 
     turnPage.addEventListener("transitionend", function(){
+      const spread = book.querySelector(".spread");
+      if (spread) spread.remove();
       current = target;
       animating = false;
       book.classList.remove("is-animating");
-      renderSpread(current);
+      renderSpread(current, { entering: true, keepExisting: true });
       setTimeout(function(){ book.focus(); }, 50);
     }, { once: true });
   }
