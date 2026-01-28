@@ -59,25 +59,6 @@ body.page-contact main{
   font-size:12px;
   border-radius:10px;
 }
-@media (max-width:640px){
-  .page-portfolio{
-    --topbar-height:72px;
-  }
-  .page-portfolio .book2-stage{
-    height:calc(100vh - var(--topbar-height));
-    padding-top:var(--topbar-height);
-    align-items:flex-start;
-  }
-  .page-portfolio .book2{
-    height:calc(100vh - var(--topbar-height));
-  }
-  .page-portfolio .portfolio-download{
-    bottom:24px;
-  }
-  .page-portfolio .book2 .pagenum{
-    bottom:24px;
-  }
-}
 .page-home .site-footer,
 .page-contact .site-footer,
 .page-about .site-footer{margin-top:0}
