@@ -59,6 +59,22 @@ body.page-contact main{
   font-size:12px;
   border-radius:10px;
 }
+@media (max-width: 900px){
+  .page-portfolio main.wrap{padding-top:92px}
+  .page-portfolio .book2-stage{height:auto;flex-direction:column;align-items:center;gap:8px}
+  .page-portfolio .book2{height:auto;max-height:none}
+  .page-portfolio .portfolio-download{
+    position:static;
+    justify-content:center;
+    margin-bottom:8px;
+  }
+  .page-portfolio .book2 .pagepane{flex-direction:column}
+  .page-portfolio .book2 .pageimg{height:auto;max-height:none}
+  .page-portfolio .book2 .pagenum{
+    position:static;
+    margin-top:8px;
+  }
+}
 .page-home .site-footer,
 .page-contact .site-footer,
 .page-about .site-footer{margin-top:0}
