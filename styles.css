@@ -457,6 +457,14 @@ body.page-contact main{
     height:auto;
   }
 }
+@media (min-width: 1400px){
+  .onas-layout{
+    transform:translateX(-80px);
+  }
+  .subnav{
+    margin-left:-40px;
+  }
+}
 @media (max-width: 640px){
   .panel{padding:24px 18px}
   .panel-title{font-size:24px}
