@@ -606,6 +606,8 @@ body.page-contact main{
   .page-home .lead{margin:0 0 10px}
   .page-home .hero-contact{margin-top:10px}
   .page-home .hero-cta{margin:10px 0; gap:10px}
+  .page-home .section-stack{gap:16px}
+  .page-home .panel + .panel{margin-top:0}
   .page-home .home-frame{margin:8px 8px 20px;padding:14px;border-width:6px}
   .page-home .home-hero{padding:24px 16px;border-width:6px}
   .page-home .home-hero h1{font-size:26px}
