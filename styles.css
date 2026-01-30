@@ -327,14 +327,12 @@ body.page-contact main{
   align-items:start;
   padding:8px 0 2px;
   min-height:calc(100vh - 100px);
-  transform:translateX(-80px);
 }
 .subnav{
   grid-area:nav;
   display:flex;
   gap:10px;
   padding:10px 0 0;
-  margin-left:-40px;
   flex-wrap:wrap;
   flex-direction:column;
   align-items:flex-start;
@@ -455,6 +453,14 @@ body.page-contact main{
   }
   .onas-slider{
     height:auto;
+  }
+}
+@media (min-width: 1200px){
+  .onas-layout{
+    transform:translateX(-80px);
+  }
+  .subnav{
+    margin-left:-40px;
   }
 }
 @media (max-width: 640px){
