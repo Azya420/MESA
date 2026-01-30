@@ -183,6 +183,8 @@ body.page-contact main{
   .site-footer{padding:12px 0}
   .footer-links a{font-size:11px}
   .footer-contact a{font-size:11px}
+  .page-portfolio .book2-stage{height:auto}
+  .page-portfolio .book2{height:auto; max-height:none}
 }
 
 
