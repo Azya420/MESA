@@ -505,11 +505,18 @@ body.page-contact main{
   .step-card{padding:16px}
   .cta-row{gap:10px}
   .contact-panel{padding:18px 18px 20px}
-  .page-contact{min-height:100dvh}
-  .page-contact main{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+  .page-contact{min-height:100dvh; --contact-footer-height:124px}
+  .page-contact main{padding-bottom:calc(var(--contact-footer-height) + env(safe-area-inset-bottom))}
   .page-contact .contact-grid{margin-bottom:16px}
-  .page-contact .footer-divider{margin-top:auto}
-  .page-contact .site-footer{margin-top:0}
+  .page-contact .footer-divider{display:none}
+  .page-contact .site-footer{
+    margin-top:0;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:30;
+  }
   .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
   .subnav-btn{width:auto; text-align:center; padding:8px 10px}
   .slider-frame{height:auto; max-height:none}
