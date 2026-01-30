@@ -187,11 +187,17 @@ body.page-contact main{
   .page-portfolio .book2-wrap{margin-top:0; padding-top:0}
   .page-portfolio .book2-stage{margin-top:-8px; padding-top:0}
   .page-portfolio .book2-stage{flex-direction:column; align-items:stretch; gap:8px}
-  .page-portfolio .book2{height:auto; max-height:none; aspect-ratio:auto}
+  .page-portfolio{min-height:100svh; overflow:hidden}
+  .page-portfolio main.wrap{min-height:100svh; display:flex; flex-direction:column; padding-bottom:0}
+  .page-portfolio .section{flex:1; display:flex}
+  .page-portfolio .book2-wrap{flex:1}
+  .page-portfolio .book2-stage{flex:1; align-items:stretch; gap:0}
+  .page-portfolio .book2{height:100%; width:100%; max-height:none; aspect-ratio:auto}
   .page-portfolio .book2 .pagepane{flex-direction:column}
-  .page-portfolio .book2 .pageimg{width:100%; height:auto}
+  .page-portfolio .book2 .pageimg{width:100%; height:100%}
   .page-portfolio .book2 .pagenum{position:static; margin-top:8px; align-self:flex-end}
-  .page-portfolio .portfolio-download{position:static; justify-content:center; margin:0 16px 12px}
+  .page-portfolio .portfolio-download{position:absolute; left:50%; bottom:12px; transform:translateX(-50%); justify-content:center; margin:0}
+  .page-portfolio .site-footer{display:none}
 }
 
 
