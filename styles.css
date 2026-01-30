@@ -525,7 +525,8 @@ body.page-about main{
     bottom:0;
     z-index:30;
   }
-  .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
+  .onas-layout{gap:0}
+  .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px; padding:0}
   .subnav-btn{width:auto; text-align:center; padding:8px 10px}
   .slider-frame{height:auto; max-height:none}
   .slider-meta p{font-size:13px}
