@@ -455,7 +455,7 @@ body.page-contact main{
     height:auto;
   }
 }
-@media (min-width: 1200px){
+@media (min-width: 1400px){
   .onas-layout{
     transform:translateX(-80px);
   }
