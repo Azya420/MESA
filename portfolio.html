@@ -29,6 +29,7 @@
 <main class="wrap">
   <section class="section">
     <div class="book2-wrap">
+      <div class="portfolio-divider top" aria-hidden="true"></div>
       <div class="book2-stage">
         <div id="book2" class="book2" tabindex="0" aria-label="Portfolio flipbook (2 strony)"></div>
         <div class="book2-nav" aria-hidden="true">
@@ -39,11 +40,15 @@
             <span aria-hidden="true">›</span>
           </button>
         </div>
+      </div>
+      <div class="portfolio-divider bottom" aria-hidden="true"></div>
+      <div class="portfolio-controls">
         <div class="portfolio-download">
           <a class="btn primary" href="assets/PORTFOLIO MESA - mesa3d.pl.pdf" download>
             Pobierz portfolio (PDF)
           </a>
         </div>
+        <div class="portfolio-counter" id="book2-counter" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -64,6 +69,7 @@
   const book = document.getElementById('book2');
   const prevBtn = document.getElementById('book2-prev');
   const nextBtn = document.getElementById('book2-next');
+  const counter = document.getElementById('book2-counter');
 
   const singleQuery = window.matchMedia("(max-width: 900px)");
   let isSingle = singleQuery.matches;
@@ -120,6 +126,7 @@
         spread.classList.remove("is-entering");
       });
     }
+    updateCounter(idx);
     updateNav();
 
   }
@@ -129,6 +136,19 @@
     const total = isSingle ? pages.length : spreads.length;
     prevBtn.disabled = current <= 0 || animating;
     nextBtn.disabled = current >= total - 1 || animating;
+  }
+
+  function updateCounter(idx = current){
+    if (!counter) return;
+    const total = pages.length;
+    if (isSingle) {
+      const pageNum = pageOffset + idx;
+      counter.textContent = pageNum + " / " + total;
+    } else {
+      const leftNum = pageOffset + idx * 2;
+      const rightNum = leftNum + 1;
+      counter.textContent = leftNum + "-" + rightNum + " / " + total;
+    }
   }
 
   function animateTurn(direction){
@@ -197,6 +217,7 @@
       animating = false;
       book.classList.remove("is-animating");
       updateNav();
+      updateCounter();
       setTimeout(function(){ book.focus(); }, 50);
     }, { once: true });
   }
