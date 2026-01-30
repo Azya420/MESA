@@ -184,7 +184,12 @@ body.page-contact main{
   .footer-links a{font-size:11px}
   .footer-contact a{font-size:11px}
   .page-portfolio .book2-stage{height:auto}
-  .page-portfolio .book2{height:auto; max-height:none}
+  .page-portfolio .book2-stage{flex-direction:column; align-items:stretch; gap:8px}
+  .page-portfolio .book2{height:auto; max-height:none; aspect-ratio:auto}
+  .page-portfolio .book2 .pagepane{flex-direction:column}
+  .page-portfolio .book2 .pageimg{width:100%; height:auto}
+  .page-portfolio .book2 .pagenum{position:static; margin-top:8px; align-self:flex-end}
+  .page-portfolio .portfolio-download{position:static; justify-content:center; margin:0 16px 12px}
 }
 
 
