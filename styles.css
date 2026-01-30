@@ -185,7 +185,7 @@ body.page-contact main{
   .footer-contact a{font-size:11px}
   .page-portfolio .book2-stage{height:auto}
   .page-portfolio .book2-wrap{margin-top:0; padding-top:0}
-  .page-portfolio .book2-stage{margin-top:0; padding-top:0}
+  .page-portfolio .book2-stage{margin-top:-8px; padding-top:0}
   .page-portfolio .book2-stage{flex-direction:column; align-items:stretch; gap:8px}
   .page-portfolio .book2{height:auto; max-height:none; aspect-ratio:auto}
   .page-portfolio .book2 .pagepane{flex-direction:column}
