@@ -525,6 +525,8 @@ body.page-about main{
     bottom:0;
     z-index:30;
   }
+  .page-about{min-height:100dvh}
+  .page-about .footer-divider{margin-top:auto}
   .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
   .subnav-btn{width:auto; text-align:center; padding:8px 10px}
   .slider-frame{height:auto; max-height:none}
