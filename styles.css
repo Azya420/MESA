@@ -28,14 +28,6 @@ body.page-contact{
 body.page-contact main{
   flex:1 0 auto;
 }
-body.page-about{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-body.page-about main{
-  flex:1 0 auto;
-}
 .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 .topbar{
   position:sticky; top:0; z-index:20;
