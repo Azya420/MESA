@@ -7,6 +7,10 @@
   --line:rgba(255,255,255,.08);
   --accent:#f5f0e6;
   --shadow: 0 18px 50px rgba(0,0,0,.45);
+  --viewport-height: 100vh;
+}
+@supports (height: 100svh){
+  :root{--viewport-height: 100svh}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -26,7 +30,7 @@ body.page-contact{
   flex-direction:column;
 }
 body.page-about{
-  min-height:100dvh;
+  min-height:var(--viewport-height);
   display:flex;
   flex-direction:column;
 }
@@ -334,7 +338,7 @@ body.page-about main{
   gap:16px;
   align-items:start;
   padding:8px 0 2px;
-  min-height:calc(100vh - 100px);
+  min-height:calc(var(--viewport-height) - 100px);
   transform:none;
 }
 .subnav{
@@ -385,10 +389,10 @@ body.page-about main{
   display:flex;
   flex-direction:column;
   gap:12px;
-  width:min(100%, calc((100vh - 130px) * 1.414));
+  width:min(100%, calc((var(--viewport-height) - 130px) * 1.414));
   height:auto;
   max-width:100%;
-  max-height:calc(100vh - 130px);
+  max-height:calc(var(--viewport-height) - 130px);
   aspect-ratio:2000 / 1414;
   margin:0 auto;
   border-radius:14px;
