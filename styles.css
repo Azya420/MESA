@@ -527,7 +527,9 @@ body.page-about main{
   }
   .page-about{min-height:100dvh}
   .page-about .footer-divider{margin-top:auto}
+  .page-about .onas-layout{gap:6px; padding:0}
   .subnav{margin-left:0; flex-direction:row; align-items:center; gap:8px}
+  .page-about .subnav{padding:0}
   .subnav-btn{width:auto; text-align:center; padding:8px 10px}
   .slider-frame{height:auto; max-height:none}
   .slider-meta p{font-size:13px}
