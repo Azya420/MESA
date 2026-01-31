@@ -600,7 +600,12 @@ body.page-about main{
   .page-home .hero-panel{padding:16px 0}
   .page-home .hero-grid{gap:16px}
   .page-home .hero-brand{margin-bottom:6px}
-  .page-home .hero-copy h1{margin:0 0 8px; font-size:26px}
+  .page-home .hero-copy h1{
+    margin:0 0 8px;
+    font-size:clamp(18px, 6.2vw, 26px);
+    letter-spacing:.01em;
+    white-space:nowrap;
+  }
   .page-home .lead{margin:0 0 10px}
   .page-home .hero-contact{margin-top:10px}
   .page-home .hero-cta{margin:10px 0; gap:10px}
