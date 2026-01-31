@@ -376,7 +376,7 @@ body.page-about main{
   padding:0;
   height:100%;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
   justify-self:stretch;
   width:100%;
