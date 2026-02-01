@@ -11,7 +11,7 @@ Wrzuć CAŁĄ zawartość tego folderu do repozytorium na GitHub (plik `index.ht
 **Settings → Pages → Deploy from a branch → main / (root)**
 
 ## Custom domain
-W GitHub Pages ustaw jako Custom domain: `www.mesa3d.pl` (a w GoDaddy zrób przekierowanie 301 z `mesa3d.pl` → `https://www.mesa3d.pl`).
+W GitHub Pages ustaw jako Custom domain: `www.axi3d.pl` (a w GoDaddy zrób przekierowanie 301 z `axi3d.pl` → `https://www.axi3d.pl`).
 
 ## Edycja kontaktu
 Otwórz `kontakt.html` i podmień:
